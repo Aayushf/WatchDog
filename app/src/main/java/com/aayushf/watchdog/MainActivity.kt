@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val queue = Volley.newRequestQueue(this@MainActivity)
-        val url = "http://192.168.43.15:9890/"
+        val url = "http://192.168.4.1:9890/"
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             Response.Listener<String> { response ->
