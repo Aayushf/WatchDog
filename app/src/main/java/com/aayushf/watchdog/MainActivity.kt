@@ -94,6 +94,8 @@ class MainActivity : AppCompatActivity() {
         override val layoutRes: Int
             get() = R.layout.main_rv_card
         override val type: Int
+
+
             get() = 0
 
         override fun getViewHolder(v: View): WiFiItem.ViewHolder {

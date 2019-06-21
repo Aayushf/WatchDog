@@ -19,7 +19,7 @@ class SplashScreen : AppCompatActivity() {
         vv.setVideoURI(uri)
         vv.start()
         vv.setOnCompletionListener {
-            val i = Intent(this@SplashScreen, MainActivity::class.java)
+            val i = Intent(this@SplashScreen, HomeActivity::class.java)
             startActivity(i)
         }
 
