@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "470367929175",
+    "firebase_url": "https://evilwatchdog.firebaseio.com",
+    "project_id": "evilwatchdog",
+    "storage_bucket": "evilwatchdog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470367929175:android:14b8ee7287001eea",
+        "android_client_info": {
+          "package_name": "com.aayushf.watchdog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470367929175-tddf98q26hqr75g58192uul8amacomoc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aayushf.watchdog",
+            "certificate_hash": "0ee3691689954afa0c32681d9358fc489c7b765e"
+          }
+        },
+        {
+          "client_id": "470367929175-jk32o96s5l0rmnddf47t3r8id969q47b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbZ36Wj6WAIo9WEyWtuM-jgj3K4K6hSqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470367929175-jk32o96s5l0rmnddf47t3r8id969q47b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

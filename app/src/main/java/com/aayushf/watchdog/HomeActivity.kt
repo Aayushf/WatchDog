@@ -1,5 +1,6 @@
 package com.aayushf.watchdog
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -65,8 +66,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_home -> {
-                // Handle the camera action
+            R.id.nav_drive -> {
+                val i = Intent(this@HomeActivity, DriveActivity::class.java)
+                startActivity(i)
             }
             R.id.nav_gallery -> {
 
