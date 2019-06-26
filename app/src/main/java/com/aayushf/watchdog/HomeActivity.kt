@@ -47,19 +47,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     val fname = it.key!! + ".jpeg"
                     logs_ref_cloud.child(fname).downloadUrl.addOnSuccessListener {uri:Uri->
                         logitems.add(LogItem(uri.toString(), fname))
-                        Log.d("HomeActivity", "Getting URL succeeded$uri")
                         val itemAdapter = ItemAdapter<LogItem>()
                         val fastAdapter = FastAdapter.with(itemAdapter)
-                        Log.d("HomeActivity", "SETTINGADAPTER")
                         home_rv.layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.VERTICAL, false)
                         home_rv.adapter = fastAdapter
-                        Log.d("HOMEACTIVITY", logitems.size.toString())
                         itemAdapter.add(logitems)
                         home_rv.adapter = fastAdapter
                     }.addOnFailureListener {
-                        Log.d("HomeActivity", "Getting URL failed")
                     }
-                    Log.d("HomeActivity", it.key!!)
                 }
             }
 
@@ -116,8 +111,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val i = Intent(this@HomeActivity, DriveActivity::class.java)
                 startActivity(i)
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_live_feed -> {
+                val i = Intent(this@HomeActivity, LiveFeedActivity::class.java)
+                startActivity(i)
             }
             R.id.nav_slideshow -> {
 

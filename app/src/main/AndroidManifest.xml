@@ -13,6 +13,11 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".LiveFeedActivity"
+                android:label="@string/title_activity_live_feed"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
                 android:name=".DriveActivity"
                 android:label="@string/title_activity_drive"
                 android:parentActivityName=".HomeActivity"
