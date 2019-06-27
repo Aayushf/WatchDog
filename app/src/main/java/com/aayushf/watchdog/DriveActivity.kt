@@ -2,12 +2,14 @@ package com.aayushf.watchdog
 
 import android.os.Bundle
 import android.view.MotionEvent
+import android.webkit.WebViewClient
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.FirebaseDatabase
 
 import kotlinx.android.synthetic.main.activity_drive.*
 import kotlinx.android.synthetic.main.content_drive.*
+import kotlinx.android.synthetic.main.content_live_feed.*
 
 class DriveActivity : AppCompatActivity() {
 
@@ -15,7 +17,8 @@ class DriveActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drive)
         setSupportActionBar(toolbar)
-
+        live_web_view.setWebViewClient(WebViewClient())
+        live_web_view.loadUrl("http://192.168.43.42:8000/")
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()

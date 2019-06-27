@@ -8,6 +8,8 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/activity_drive"
         tools:context=".DriveActivity">
+    <WebView android:layout_width="match_parent" android:layout_height="match_parent"
+             android:id="@+id/live_web_view_drive_act"></WebView>
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content"
                                                        android:layout_height="wrap_content"
                                                        app:layout_constraintStart_toStartOf="parent"
