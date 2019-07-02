@@ -10,6 +10,9 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_drive.*
 import kotlinx.android.synthetic.main.content_drive.*
 import kotlinx.android.synthetic.main.content_live_feed.*
+import com.google.firebase.database.DatabaseReference
+
+
 
 class DriveActivity : AppCompatActivity() {
 
@@ -17,12 +20,15 @@ class DriveActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drive)
         setSupportActionBar(toolbar)
-        live_web_view.setWebViewClient(WebViewClient())
-        live_web_view.loadUrl("http://192.168.43.42:8000/")
+        live_web_view_drive_act.setWebViewClient(WebViewClient())
+        live_web_view_drive_act.loadUrl("http://192.168.43.42:8000/")
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("auto")
+        myRef.setValue("1")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val db = FirebaseDatabase.getInstance()
         val directionref = db.getReference("direction")

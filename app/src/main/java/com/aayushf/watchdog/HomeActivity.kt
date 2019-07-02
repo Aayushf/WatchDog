@@ -28,6 +28,7 @@ import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
 import com.mikepenz.fastadapter.items.AbstractItem
 import kotlinx.android.synthetic.main.content_scrolling.*
+import java.util.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,6 +42,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val logs_ref = db.getReference("logs").child("log_images")
         val logs_ref_cloud = FirebaseStorage.getInstance().getReference().child("logs")
         val logitems = mutableListOf<LogItem>()
+        val myRef = db.getReference("auto")
+        myRef.setValue("1")
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 dataSnapshot.children.forEach {
@@ -115,18 +118,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val i = Intent(this@HomeActivity, LiveFeedActivity::class.java)
                 startActivity(i)
             }
-            R.id.nav_slideshow -> {
 
-            }
-            R.id.nav_tools -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -151,7 +143,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             override fun bindView(item: LogItem, payloads: MutableList<Any>) {
                 val iv = v.findViewById<ImageView>(R.id.rv_item_image)
                 Glide.with(iv).load(item.url).into(iv)
-                v.findViewById<TextView>(R.id.rv_item_text).text = item.name
+                val d = Date(item.name.substringBefore('.').toLong())
+                Log.d("Date", d.toString())
+                val s = d.toString().substringBefore(" GMT")
+                v.findViewById<TextView>(R.id.rv_item_text).text = s
+
             }
 
             override fun unbindView(item: LogItem) {

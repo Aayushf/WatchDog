@@ -21,6 +21,7 @@ class LiveFeedActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         live_web_view.setWebViewClient(WebViewClient())
         live_web_view.loadUrl("http://192.168.43.42:8000/")
     }

@@ -22,6 +22,7 @@
                                                                                app:layout_constraintEnd_toEndOf="parent"
                                                                                app:layout_constraintTop_toTopOf="parent"
                                                                                android:id="@+id/drive_fwd"
+                                                                               android:src="@drawable/twotone_keyboard_arrow_up_black_48"
         />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_width="wrap_content"
@@ -30,6 +31,7 @@
                                                                                app:layout_constraintBottom_toBottomOf="parent"
                                                                                app:layout_constraintTop_toTopOf="parent"
                                                                                android:id="@+id/drive_left"
+                                                                               android:src="@drawable/twotone_keyboard_arrow_left_black_48"
         />
         <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_width="wrap_content"
                                                                                android:layout_height="wrap_content"
@@ -37,6 +39,7 @@
                                                                                app:layout_constraintBottom_toBottomOf="parent"
                                                                                app:layout_constraintTop_toTopOf="parent"
                                                                                android:id="@+id/drive_right"
+                                                                               android:src="@drawable/twotone_keyboard_arrow_right_black_48"
         />
         <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_width="wrap_content"
                                                                                android:layout_height="wrap_content"
@@ -44,6 +47,7 @@
                                                                                app:layout_constraintEnd_toEndOf="parent"
                                                                                app:layout_constraintTop_toBottomOf="@id/drive_right"
                                                                                android:id="@+id/drive_back"
+                                                                               android:src="@drawable/twotone_keyboard_arrow_down_black_48"
         />
 
 

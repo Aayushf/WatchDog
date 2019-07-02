@@ -15,6 +15,7 @@
         <activity
                 android:name=".LiveFeedActivity"
                 android:label="@string/title_activity_live_feed"
+                android:parentActivityName=".HomeActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
