@@ -3,6 +3,7 @@
           package="com.aayushf.watchdog">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
             android:allowBackup="true"
@@ -12,6 +13,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <service
+                android:name=".WatchDogBackground"
+                android:enabled="true"
+                android:exported="true">
+        </service>
+
         <activity
                 android:name=".LiveFeedActivity"
                 android:label="@string/title_activity_live_feed"
@@ -28,11 +35,6 @@
                     android:value="com.aayushf.watchdog.HomeActivity"/>
         </activity>
         <activity
-                android:name=".ScrollingActivity"
-                android:label="@string/title_activity_scrolling"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
                 android:name=".HomeActivity"
                 android:label="@string/title_activity_home"
                 android:theme="@style/AppTheme.NoActionBar">
@@ -44,7 +46,7 @@
         </activity>
         <activity
                 android:name=".SplashScreen"
-                android:label="SplashSCreen"
+                android:label="WatchDog"
                 android:theme="@style/SplashStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -52,6 +54,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <receiver android:name=".MyReceiver" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
